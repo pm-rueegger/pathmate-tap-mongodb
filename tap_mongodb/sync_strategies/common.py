@@ -107,7 +107,7 @@ def string_to_class(str_value: str, type_value: str) -> Any:
         'datetime': singer.utils.strptime_with_tz,
         'int': int,
         'Int64': bson.int64.Int64,
-        'float': str,
+        'float': lambda val: int(float(val)), # converting at a float would be a more general solution
         'ObjectId': objectid.ObjectId,
         'Timestamp': lambda val: (lambda split_value=val.split('.'):
                                   bson.timestamp.Timestamp(int(split_value[0]), int(split_value[1])))(),
