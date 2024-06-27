@@ -22,7 +22,7 @@ def get_max_id_value(collection: Collection) -> Optional[str]:
     Returns: Max ID or None
 
     """
-    row = collection.find_one(sort=[("_id", pymongo.DESCENDING)])
+    row = collection.find_one(sort=[("_id", pymongo.DESCENDING)], allow_disk_use=True)
     if row:
         return row['_id']
 
