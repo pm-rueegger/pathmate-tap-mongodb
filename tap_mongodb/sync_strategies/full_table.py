@@ -98,7 +98,8 @@ def sync_collection(collection: Collection, stream: Dict, state: Dict) -> None:
     LOGGER.info('Querying %s with: %s', stream['tap_stream_id'], dict(find=find_filter))
 
     with collection.find({'_id': find_filter},
-                         sort=[("_id", pymongo.ASCENDING)]) as cursor:
+                         sort=[("_id", pymongo.ASCENDING)],
+                         allow_disk_use=True) as cursor:
         rows_saved = 0
         start_time = time.time()
 
