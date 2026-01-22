@@ -4,13 +4,13 @@ from setuptools import setup
 with open('README.md', 'r') as fh:
     long_desc = fh.read()
 
-setup(name='pipelinewise-tap-mongodb',
+setup(name='pathmate-tap-mongodb',
       version='1.3.0',
       description='Singer.io tap for extracting data from MongoDB - Pipelinewise compatible',
       long_description=long_desc,
       long_description_content_type='text/markdown',
       author='Wise',
-      url='https://github.com/transferwise/pipelinewise-tap-mongodb',
+      url='https://github.com/pm-rueegger/pathmate-tap-mongodb',
       classifiers=[
           'Programming Language :: Python :: 3 :: Only',
           'Programming Language :: Python :: 3.6',
@@ -19,11 +19,11 @@ setup(name='pipelinewise-tap-mongodb',
       ],
       py_modules=['tap_mongodb'],
       install_requires=[
-          'pipelinewise-singer-python==1.*',
-          'pymongo==3.12.*',
-          'tzlocal==2.1.*',
-          'terminaltables==3.1.*',
-          'dnspython==2.1.*',
+          'pipelinewise-singer-python==1.3.0',
+          'pymongo==3.12.3',
+          'tzlocal==2.1',
+          'terminaltables==3.1.10',
+          'dnspython==2.1.0',
       ],
       extras_require={
           'dev': [
